@@ -2,15 +2,15 @@
 //const somar = document.querySelector ('#soma');
 
 
-const controle = document.querySelectorAll ('.controle-ajuste');
+const controle = document.querySelectorAll ('[data-controle]');
 
 
 // controle
 
 controle.forEach ( (elemento) => {
 
-   elemento.addEventListener ('click', function (evento) {
-             manipulaDados (evento.target.textContent, evento.target.parentNode );
+   elemento.addEventListener ('click', (evento) => {
+             manipulaDados(evento.target.dataset.controle, evento.target.parentNode );
    });
 
 });
@@ -21,7 +21,7 @@ controle.forEach ( (elemento) => {
 
 // operações
 
-function  manipulaDados (operacao , controle) {
+function  manipulaDados (operacao, controle) {
     const peca = controle.querySelector ('.controle-contador');
     
     
